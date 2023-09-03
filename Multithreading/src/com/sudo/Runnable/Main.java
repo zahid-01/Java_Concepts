@@ -1,5 +1,6 @@
 package com.sudo.Runnable;
 
+import javax.swing.plaf.nimbus.State;
 import java.util.Scanner;
 
 class MyThread implements Runnable {
@@ -25,21 +26,22 @@ public class Main {
         ThreadGroup tt = new ThreadGroup("hi");
 
         MyThread myThread = new MyThread();
-        Thread t = new Thread(myThread);
+        Thread t = new Thread(tt, myThread);
 
         MyThread1 myThread1 = new MyThread1();
-        Thread hakuna = new Thread(myThread1);
+        Thread hakuna = new Thread(tt, myThread1);
 
-        t.setPriority(1);
-        t.start();
+        Thread[] threads = new Thread[]{t, hakuna};
 
-        hakuna.setPriority(10);
-        hakuna.start();
+        for (Thread ts: threads)
+            ts.start();
 
-//        int counter = 1;
-//        do {
-//
-//            System.out.println(counter++ + " Thread Main");
-//        } while (counter < 100);
+        Thread.dumpStack();
+
+        int counter = 1;
+        do {
+            if(counter == 50) t.interrupt();
+            System.out.println(counter++ + " "+t.isInterrupted());
+        } while (counter < 100);
     }
 }
