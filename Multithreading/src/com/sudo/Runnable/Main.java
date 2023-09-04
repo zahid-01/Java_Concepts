@@ -3,7 +3,7 @@ package com.sudo.Runnable;
 import javax.swing.plaf.nimbus.State;
 import java.util.Scanner;
 
-class MyThread implements Runnable {
+class MyThread extends Thread {
     public void run() {
         int counter = 1;
         do {
@@ -36,7 +36,6 @@ public class Main {
         for (Thread ts: threads)
             ts.start();
 
-        Thread.dumpStack();
 
         int counter = 1;
         do {
