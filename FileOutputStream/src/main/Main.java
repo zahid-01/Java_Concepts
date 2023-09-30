@@ -2,10 +2,12 @@ package main;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        new FIleCopier().copyContents();
         //Writing to the file
         try (
                 FileOutputStream fileOutputStream = new FileOutputStream("src/main/text1.txt");) {
@@ -25,11 +27,18 @@ public class Main {
 
         //Reading from the file
 
-        try(FileInputStream f = new FileInputStream("src/main/text1.txt");){
-            byte[] bytes = new byte[f.available()];
-            f.read(bytes);
-            String s = new String(bytes);
-            System.out.println(s);
+        try(FileReader f = new FileReader("src/main/text1.txt");){
+//            byte[] bytes = new byte[f.available()];
+//            f.read(bytes);
+//            String s = new String(bytes);
+//            System.out.println(s);
+
+            int b;
+
+            do {
+                b = f.read();
+                System.out.print((char)b);
+            }while (b != -1);
         }catch(IOException e){
             System.out.println(e.getMessage());
         }

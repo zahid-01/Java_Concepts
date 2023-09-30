@@ -1,0 +1,2 @@
+This is a demo file, its contents are supposed to be copied into another file.
+Maybe it's a copied file itself.
