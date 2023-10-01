@@ -1,2 +1,4 @@
 THIS IS A DEMO TEXT FILE, THIS FILE IS ALL UPPER CASE LETTERS,
 IF YOU ARE READING IT AS ALL LOWER CASE THEN IT IS A COPIED FILE!
+this is a demo text file, this file is all upper case letters,
+if you are reading it as all lower case then it is a copied file!

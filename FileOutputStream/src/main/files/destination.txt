@@ -1,2 +1,2 @@
-This is a demo file, its contents are supposed to be copied into another file.
-Maybe it's a copied file itself.
+this is a demo text file, this file is all upper case letters,
+if you are reading it as all lower case then it is a copied file!

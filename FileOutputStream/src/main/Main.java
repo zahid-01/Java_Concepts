@@ -7,7 +7,10 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        new FIleCopier().copyContents();
+        FIleCopier fIleCopier = new FIleCopier();
+        fIleCopier.copyContents();
+        fIleCopier.comboCopier();
+
         //Writing to the file
         try (
                 FileOutputStream fileOutputStream = new FileOutputStream("src/main/text1.txt");) {
