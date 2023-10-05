@@ -1,6 +1,5 @@
 package dev;
 
-import java.util.Collection;
 import java.util.LinkedList;
 
 public class sudo {
